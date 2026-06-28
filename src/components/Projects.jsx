@@ -67,7 +67,7 @@ export default function Projects() {
               className="group relative overflow-hidden rounded-3xl border border-black/5 bg-white p-8 shadow-sm transition-all duration-500 hover:shadow-md md:p-12 lg:p-16"
             >
               <div
-                className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-50 transition-opacity duration-500 group-hover:opacity-80`}
+                className={`pointer-events-none absolute inset-0 bg-linear-to-br ${project.gradient} opacity-50 transition-opacity duration-500 group-hover:opacity-80`}
               />
 
               <div className="relative">
