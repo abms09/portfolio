@@ -12,7 +12,7 @@ const categories = [
     skills: ['Node.js', 'Express', 'MongoDB', 'REST APIs'],
   },
   {
-    title: 'Tools & Workflow',
+    title: 'Tools',
     skills: ['Git', 'GitHub', 'VS Code', 'Vite', 'Postman'],
   },
 ]
