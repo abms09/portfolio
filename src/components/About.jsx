@@ -3,9 +3,9 @@ import Section from './Section'
 import Container from './Container'
 
 const stats = [
-  { value: '1', label: 'Internship completed' },
-  { value: '3', label: 'Projects built' },
-  { value: '1', label: 'Month of experience' },
+  { value: 'BCA', label: 'Srinivas University, Mangalore' },
+  { value: 'MERN', label: 'Full-stack certification' },
+  { value: '1', label: 'Internship at Techolas' },
 ]
 
 export default function About() {
@@ -30,7 +30,7 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0, 1] }}
           >
             <h2 className="text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-black sm:text-5xl md:text-6xl">
-              A passionate web developer starting my journey in tech.
+              Hi, I am Adarsh Binu M.S — a web developer from Kozhikode.
             </h2>
           </motion.div>
 
@@ -42,9 +42,10 @@ export default function About() {
             className="flex flex-col justify-center gap-6"
           >
             <p className="text-lg leading-relaxed text-black/60">
-              I recently completed a one-month web development internship
-              at Techolas Technologies in Calicut, where I gained hands-on
-              experience building web applications using the MERN stack.
+              I completed my BCA from Srinivas University, Mangalore, and
+              earned a MERN stack certification from Techolas Technologies
+              in Calicut. I also completed a one-month web development
+              internship there, building real-world applications.
             </p>
             <p className="text-lg leading-relaxed text-black/60">
               I am passionate about crafting clean, functional web experiences

@@ -17,7 +17,7 @@ export default function Hero() {
         </motion.p>
 
         <AnimatedText
-          text="Crafting digital experiences that inspire."
+          text="Adarsh Binu M.S"
           as="h1"
           className="max-w-5xl text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-black sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
         />
@@ -28,8 +28,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0, 1] }}
           className="mt-8 max-w-2xl text-lg leading-relaxed text-black/60 md:text-xl"
         >
-          I build beautiful, performant, and accessible web applications
-          with modern technologies and meticulous attention to detail.
+          A passionate web developer from Kozhikode. I build modern web
+          applications with the MERN stack and a love for clean design.
         </motion.p>
 
         <motion.div
