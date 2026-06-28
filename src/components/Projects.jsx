@@ -26,7 +26,7 @@ const projects = [
     subtitle: 'Crockery & serving equipment rental',
     description:
       'A rental marketplace for party essentials — crockery items, buffet sets, and serving teams. Users can browse inventory, check availability, and place rental orders.',
-    tags: ['React', 'Node.js', 'MongoDB'],
+    tags: ['Html','CSS','JavaScript','Bootstrap'],
     link: 'https://abms09.github.io/safarirental2024/',
     gradient: 'from-amber-500/10 via-orange-500/10 to-red-500/10',
   },
