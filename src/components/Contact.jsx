@@ -63,6 +63,29 @@ export default function Contact() {
                 +91 8086826234
               </a>
             </div>
+            <div>
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-black/40">
+                Social
+              </div>
+              <div className="flex gap-6">
+                <a
+                  href="https://github.com/abms09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-black/60 transition-colors hover:text-black"
+                >
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/adarsh-binu-ms/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-black/60 transition-colors hover:text-black"
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
             <div className="pt-4">
               <Button href="mailto:adarshbinums@gmail.com">Send a message</Button>
             </div>

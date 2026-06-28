@@ -9,6 +9,7 @@ const projects = [
     description:
       'A full-featured pet marketplace built with the MERN stack. Users can browse, list, and purchase pets with secure authentication, messaging, and review systems.',
     tags: ['MongoDB', 'Express', 'React', 'Node.js'],
+    link: 'https://abms09.github.io/petLizo/',
     gradient: 'from-emerald-500/10 via-green-500/10 to-teal-500/10',
   },
   {
@@ -17,6 +18,7 @@ const projects = [
     description:
       'A React-powered platform to discover and book events happening in Calicut. Features event listings, seat reservations, and a streamlined booking experience.',
     tags: ['React', 'CSS', 'REST APIs'],
+    link: 'https://abms09.github.io/cali-eventzo/',
     gradient: 'from-violet-500/10 via-purple-500/10 to-fuchsia-500/10',
   },
   {
@@ -25,6 +27,7 @@ const projects = [
     description:
       'A rental marketplace for party essentials — crockery items, buffet sets, and serving teams. Users can browse inventory, check availability, and place rental orders.',
     tags: ['React', 'Node.js', 'MongoDB'],
+    link: 'https://abms09.github.io/safarirental2024/',
     gradient: 'from-amber-500/10 via-orange-500/10 to-red-500/10',
   },
 ]
@@ -87,6 +90,19 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-black/50 transition-colors hover:text-black"
+                  >
+                    Live site
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}

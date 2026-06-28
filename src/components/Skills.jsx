@@ -5,18 +5,14 @@ import Container from './Container'
 const categories = [
   {
     title: 'Frontend',
-    skills: ['React', 'HTML', 'CSS', 'Tailwind CSS', 'Framer Motion'],
+    skills: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind CSS', 'Framer Motion'],
   },
   {
     title: 'Backend',
     skills: ['Node.js', 'Express', 'MongoDB', 'REST APIs'],
   },
   {
-    title: 'Languages',
-    skills: ['JavaScript', 'Python', 'C', 'Basics of Java'],
-  },
-  {
-    title: 'Tools',
+    title: 'Tools & Workflow',
     skills: ['Git', 'GitHub', 'VS Code', 'Vite', 'Postman'],
   },
 ]
@@ -66,17 +62,22 @@ export default function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
-          className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-8 md:grid-cols-3"
         >
           {categories.map((category) => (
-            <motion.div key={category.title} variants={itemVariants}>
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-black/40">
+            <motion.div
+              key={category.title}
+              variants={itemVariants}
+              className="rounded-2xl border border-black/5 bg-white p-8 shadow-sm"
+            >
+              <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.15em] text-black/40">
                 {category.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {category.skills.map((skill) => (
-                  <li key={skill}>
-                    <span className="inline-block rounded-full border border-black/10 bg-white px-4 py-2 text-sm text-black/70 transition-colors hover:border-black/30 hover:text-black">
+                  <li key={skill} className="flex items-center gap-3">
+                    <span className="h-1 w-1 rounded-full bg-black/20" />
+                    <span className="text-sm font-medium text-black/70">
                       {skill}
                     </span>
                   </li>
