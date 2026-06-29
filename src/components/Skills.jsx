@@ -42,7 +42,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
-          className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-black/40"
+          className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500"
         >
           Skills
         </motion.div>
@@ -52,7 +52,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0, 1] }}
-          className="mb-16 max-w-3xl text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-black sm:text-5xl md:text-6xl"
+          className="mb-16 max-w-3xl text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl"
         >
           Technologies and tools I work with daily.
         </motion.h2>
@@ -68,16 +68,16 @@ export default function Skills() {
             <motion.div
               key={category.title}
               variants={itemVariants}
-              className="rounded-2xl border border-black/5 bg-white p-8 shadow-sm"
+              className="rounded-2xl border border-zinc-800 bg-zinc-900 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand/30"
             >
-              <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.15em] text-black/40">
+              <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.15em] text-brand">
                 {category.title}
               </h3>
               <ul className="space-y-3">
                 {category.skills.map((skill) => (
                   <li key={skill} className="flex items-center gap-3">
-                    <span className="h-1 w-1 rounded-full bg-black/20" />
-                    <span className="text-sm font-medium text-black/70">
+                    <span className="h-1 w-1 rounded-full bg-brand" />
+                    <span className="text-sm font-medium text-zinc-300">
                       {skill}
                     </span>
                   </li>

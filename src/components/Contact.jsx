@@ -12,7 +12,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.7, ease: [0.25, 0.1, 0, 1] }}
-          className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-black/40"
+          className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500"
         >
           Contact
         </motion.div>
@@ -24,10 +24,10 @@ export default function Contact() {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0, 1] }}
           >
-            <h2 className="mb-6 text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-black sm:text-5xl md:text-6xl">
+            <h2 className="mb-6 text-4xl font-bold leading-[1.1] tracking-[-0.03em] text-white sm:text-5xl md:text-6xl">
               Let us create something remarkable together.
             </h2>
-            <p className="max-w-md text-lg leading-relaxed text-black/60">
+            <p className="max-w-md text-lg leading-relaxed text-zinc-400">
               I am always open to new opportunities, interesting projects,
               and conversations. Whether you have a question or just want
               to say hello — I will get back to you.
@@ -42,29 +42,29 @@ export default function Contact() {
             className="flex flex-col gap-8"
           >
             <div>
-              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-black/40">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
                 Email
               </div>
               <a
                 href="mailto:adarshbinums@gmail.com"
-                className="text-lg font-medium text-black transition-opacity hover:opacity-60"
+                className="text-lg font-medium text-brand transition-colors hover:text-brand-light"
               >
                 adarshbinums@gmail.com
               </a>
             </div>
             <div>
-              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-black/40">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
                 Phone
               </div>
               <a
                 href="tel:+918086826234"
-                className="text-lg font-medium text-black transition-opacity hover:opacity-60"
+                className="text-lg font-medium text-brand transition-colors hover:text-brand-light"
               >
                 +91 8086826234
               </a>
             </div>
             <div>
-              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-black/40">
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-zinc-500">
                 Social
               </div>
               <div className="flex gap-6">
@@ -72,7 +72,7 @@ export default function Contact() {
                   href="https://github.com/abms09"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-black/60 transition-colors hover:text-black"
+                  className="text-sm font-medium text-zinc-400 transition-colors hover:text-brand"
                 >
                   GitHub
                 </a>
@@ -80,7 +80,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/adarsh-binu-ms/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-black/60 transition-colors hover:text-black"
+                  className="text-sm font-medium text-zinc-400 transition-colors hover:text-brand"
                 >
                   LinkedIn
                 </a>

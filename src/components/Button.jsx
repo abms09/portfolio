@@ -1,9 +1,9 @@
 export default function Button({ href, children, variant = 'primary', className = '' }) {
   const base = 'inline-block rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer'
   const variants = {
-    primary: 'bg-black text-white px-8 py-4 hover:opacity-80',
-    secondary: 'border border-black/20 text-black px-8 py-4 hover:bg-black hover:text-white',
-    ghost: 'text-black/60 hover:text-black',
+    primary: 'bg-brand text-white px-8 py-4 hover:bg-brand-dark',
+    secondary: 'border border-zinc-700 text-zinc-200 px-8 py-4 hover:bg-zinc-800 hover:text-white',
+    ghost: 'text-zinc-400 hover:text-white',
   }
 
   if (href) {
