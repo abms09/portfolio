@@ -17,7 +17,7 @@ const contactChannels = [
   {
     name: 'Phone & WhatsApp',
     value: '+91 8086826234',
-    actionText: 'Direct Call / WhatsApp',
+    actionText: 'Call / WhatsApp',
     href: 'tel:+918086826234',
     icon: (
       <svg className="h-5 w-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +57,7 @@ export default function Contact() {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('adarshbinums@gmail.com')
     setCopiedEmail(true)
-    setTimeout(() => setCopiedEmail(false), 2500)
+    setTimeout(() => setCopiedEmail(false), 2000)
   }
 
   return (
@@ -78,12 +78,12 @@ export default function Contact() {
             Let's connect and build something impactful.
           </h2>
           <p className="mt-4 text-base text-slate-300">
-            I am currently open to full-time developer positions, internships, and project collaborations. Feel free to contact me directly through any of the channels below.
+            Open to full-time developer positions, internships, and project collaborations.
           </p>
         </div>
 
         {/* Contact Banner */}
-        <div className="mt-12 rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900/90 via-slate-950/90 to-slate-900/90 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
+        <div className="mt-12 rounded-3xl border border-slate-800 bg-linear-to-br from-slate-900/90 via-slate-950/90 to-slate-900/90 p-8 sm:p-12 shadow-2xl backdrop-blur-xl">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-mono text-emerald-300 mb-4">

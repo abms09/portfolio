@@ -26,8 +26,8 @@ function App() {
         <Marquee />
         <About />
         <Skills />
-        <Experience />
         <Projects />
+        <Experience />
         <Contact />
       </main>
       <Footer />

@@ -5,8 +5,8 @@ import Logo from './Logo'
 const navLinks = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -20,7 +20,7 @@ export default function Navbar() {
       setScrolled(window.scrollY > 20)
 
       // Active section observer
-      const sections = ['about', 'skills', 'experience', 'projects', 'contact']
+      const sections = ['about', 'skills', 'projects', 'experience', 'contact']
       const current = sections.find((id) => {
         const el = document.getElementById(id)
         if (el) {

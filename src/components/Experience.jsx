@@ -11,12 +11,12 @@ const timeline = [
     period: 'Internship',
     badgeColor: 'border-cyan-500/30 bg-cyan-500/10 text-cyan-300',
     description:
-      'Gained intensive practical experience building real-world web applications. Focused on full-stack development, modern frontend architectures, and server-side integration.',
+      'Gained practical full-stack experience building real-world web applications and integrating server-side workflows.',
     highlights: [
-      'Built responsive frontend components in React with clean, maintainable structure',
+      'Built responsive frontend components in React with clean, modular structure',
       'Developed and tested RESTful API endpoints using Node.js and Express',
       'Collaborated on database integration and CRUD workflows with MongoDB',
-      'Employed Git for version control and Postman for API validation',
+      'Employed Git for version control and Postman for API testing and validation',
     ],
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'REST APIs', 'Postman'],
   },
@@ -28,7 +28,7 @@ const timeline = [
     period: 'Professional Program',
     badgeColor: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-300',
     description:
-      'Completed comprehensive professional certification covering complete MERN stack architecture, backend routing, state management, and full-stack project deployment.',
+      'Completed intensive professional certification covering full MERN stack architecture, backend routing, state management, and deployment.',
     highlights: [
       'Mastered MongoDB schema design, indexing, and Mongoose ODM patterns',
       'Engineered secure server architectures with Express middleware & authentication',
@@ -45,7 +45,7 @@ const timeline = [
     period: 'Undergraduate Degree',
     badgeColor: 'border-indigo-500/30 bg-indigo-500/10 text-indigo-300',
     description:
-      'Solid undergraduate foundation in Computer Science principles, software engineering, database management systems, and programming methodologies.',
+      'Undergraduate foundation in Computer Science principles, software engineering, database management systems, and programming methodologies.',
     highlights: [
       'Core coursework in Database Management Systems (DBMS) and SQL',
       'Software Engineering lifecycle, Object-Oriented Programming (OOP), and data structures',
@@ -63,7 +63,7 @@ export default function Experience() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-semibold">
-            // 03. Experience & Education
+            // 04. Experience & Education
           </span>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
             Proven foundation through practical experience and academic rigor.

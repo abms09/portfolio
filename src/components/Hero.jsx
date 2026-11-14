@@ -18,7 +18,7 @@ function DeveloperTerminal() {
 };`
     navigator.clipboard.writeText(code)
     setCopied(true)
-    setTimeout(() => setCopied(false), 2500)
+    setTimeout(() => setCopied(false), 2000)
   }
 
   return (
@@ -47,6 +47,7 @@ function DeveloperTerminal() {
           <button
             type="button"
             onClick={handleCopyCode}
+            aria-label="Copy configuration"
             className="flex items-center gap-1.5 rounded-md border border-slate-700/60 bg-slate-800/60 px-2 py-1 font-mono text-[11px] text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
           >
             {copied ? (
@@ -69,7 +70,6 @@ function DeveloperTerminal() {
 
         {/* Code Content */}
         <div className="p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-slate-300">
-          <div className="text-slate-500">// Personal developer configuration</div>
           <div>
             <span className="text-indigo-400">const</span>{' '}
             <span className="text-cyan-300">developer</span>:{' '}
@@ -85,7 +85,7 @@ function DeveloperTerminal() {
           </div>
           <div className="pl-4">
             <span className="text-slate-400">location</span>:{' '}
-            <span className="text-emerald-300">'Kozhikode, Kerala, India'</span>,
+            <span className="text-emerald-300">'Kozhikode, Kerala'</span>,
           </div>
           <div className="pl-4">
             <span className="text-slate-400">primaryStack</span>: [
@@ -96,35 +96,21 @@ function DeveloperTerminal() {
             ],
           </div>
           <div className="pl-4">
-            <span className="text-slate-400">tools</span>: [
-            <span className="text-teal-300">'Tailwind CSS'</span>,{' '}
-            <span className="text-teal-300">'Git'</span>,{' '}
-            <span className="text-teal-300">'REST APIs'</span>,{' '}
-            <span className="text-teal-300">'Vite'</span>
-            ],
-          </div>
-          <div className="pl-4">
             <span className="text-slate-400">education</span>:{' '}
             <span className="text-emerald-300">'BCA, Srinivas University'</span>,
           </div>
           <div className="pl-4">
             <span className="text-slate-400">status</span>:{' '}
-            <span className="text-cyan-300">'Available for Full-time Roles & Internships'</span>
+            <span className="text-cyan-300">'Open to opportunities'</span>
           </div>
           <div>&#125;;</div>
-          <div className="mt-2 text-slate-500">
-            <span className="text-indigo-400">export default</span> developer;
-          </div>
         </div>
 
         {/* Live Status Footer */}
         <div className="flex flex-wrap items-center justify-between border-t border-slate-800/80 bg-slate-900/40 px-5 py-3 text-xs">
           <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="font-mono text-emerald-400">Open to new projects</span>
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="font-mono text-emerald-400">Available for hire</span>
           </div>
           <span className="font-mono text-slate-400">git branch: main</span>
         </div>
@@ -155,7 +141,7 @@ export default function Hero() {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText('adarshbinums@gmail.com')
     setEmailCopied(true)
-    setTimeout(() => setEmailCopied(false), 2500)
+    setTimeout(() => setEmailCopied(false), 2000)
   }
 
   return (
@@ -186,7 +172,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
               </span>
-              <span>Available for Full-time Roles & Internships</span>
+              <span>Available for Full-time Roles & Internships &bull; Kozhikode</span>
             </motion.div>
 
             {/* Main Headline */}
@@ -205,14 +191,14 @@ export default function Hero() {
               </h1>
             </motion.div>
 
-            {/* Description */}
+            {/* Concise, impactful description */}
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-300"
             >
-              Hi, I'm <strong className="font-semibold text-white">Adarsh Binu M.S</strong>, a web developer based in Kozhikode, Kerala. I build complete end-to-end full-stack applications with MongoDB, Express, React, and Node.js—combining clean component architecture with reliable REST APIs.
+              Hi, I'm <strong className="font-semibold text-white">Adarsh Binu M.S</strong>, a full-stack developer based in Kozhikode, Kerala. I build complete web applications with MongoDB, Express, React, and Node.js.
             </motion.p>
 
             {/* Action Buttons */}
@@ -254,7 +240,7 @@ export default function Hero() {
               </button>
             </motion.div>
 
-            {/* Quick Links / Badges */}
+            {/* Quick Badges */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

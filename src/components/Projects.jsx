@@ -244,13 +244,13 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div className="max-w-2xl">
             <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-semibold">
-              // 04. Selected Works
+              // 03. Selected Works
             </span>
             <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               Featured Web Projects & Live Applications.
             </h2>
             <p className="mt-4 text-base text-slate-300">
-              Real-world full-stack and frontend applications built from scratch, tested, and deployed with working live demos.
+              Real-world full-stack and frontend applications built from scratch with working live demos.
             </p>
           </div>
 
