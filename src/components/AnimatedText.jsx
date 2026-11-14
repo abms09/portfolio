@@ -1,41 +1,32 @@
 import { motion } from 'framer-motion'
 
-const containerVariants = {
+const container = {
   hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.04,
-    },
-  },
+  visible: { transition: { staggerChildren: 0.12 } },
 }
 
-const wordVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.1, 0, 1] },
-  },
+const line = {
+  hidden: { y: '105%' },
+  visible: { y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
 }
 
-export default function AnimatedText({ text, as: Tag = 'h1', className = '' }) {
-  const words = text.split(' ')
-
+// Each line slides up from behind a mask. This is the page's one load animation.
+export default function AnimatedText({ lines, className = '' }) {
   return (
-    <motion.div
-      variants={containerVariants}
+    <motion.h1
+      variants={container}
       initial="hidden"
       animate="visible"
       className={className}
-      aria-label={text}
     >
-      <Tag className="inline">
-        {words.map((word, i) => (
-          <motion.span key={i} variants={wordVariants} className="inline-block">
-            {word}{i < words.length - 1 ? '\u00A0' : ''}
+      <span className="sr-only">{lines.join(' ')}</span>
+      {lines.map((text) => (
+        <span key={text} aria-hidden="true" className="block overflow-hidden pb-[0.12em]">
+          <motion.span variants={line} className="block">
+            {text}
           </motion.span>
-        ))}
-      </Tag>
-    </motion.div>
+        </span>
+      ))}
+    </motion.h1>
   )
 }

@@ -1,214 +1,286 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Container from './Container'
 import Button from './Button'
-import AnimatedText from './AnimatedText'
 
-const icons = [
-  {
-    id: 'react',
-    posX: '8%', posY: '20%', size: 28,
-    duration: 7, delay: 0, opacity: 0.15,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <circle cx="12" cy="12" r="2.5" />
-        <ellipse cx="12" cy="12" rx="10.5" ry="3.5" transform="rotate(0 12 12)" />
-        <ellipse cx="12" cy="12" rx="10.5" ry="3.5" transform="rotate(60 12 12)" />
-        <ellipse cx="12" cy="12" rx="10.5" ry="3.5" transform="rotate(120 12 12)" />
-      </svg>
-    ),
-  },
-  {
-    id: 'node',
-    posX: '82%', posY: '12%', size: 24,
-    duration: 8, delay: 0.5, opacity: 0.16,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2L2 7v10l10 5 10-5V7l-10-5z" />
-        <circle cx="12" cy="12" r="3" />
-      </svg>
-    ),
-  },
-  {
-    id: 'mongo',
-    posX: '76%', posY: '72%', size: 26,
-    duration: 9, delay: 1, opacity: 0.15,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2C8 10 6 14 6 18c0 3 2 5 6 5s6-2 6-5c0-4-2-8-6-16z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'js',
-    posX: '14%', posY: '78%', size: 22,
-    duration: 6.5, delay: 0.3, opacity: 0.18,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="2" y="2" width="20" height="20" rx="2" />
-        <text x="7" y="18" fontSize="13" fontWeight="bold" fill="currentColor" stroke="none">JS</text>
-      </svg>
-    ),
-  },
-  {
-    id: 'express',
-    posX: '50%', posY: '86%', size: 20,
-    duration: 7.5, delay: 0.8, opacity: 0.12,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <text x="1" y="19" fontSize="16" fontWeight="bold" fill="currentColor" stroke="none" letterSpacing="-1">EX</text>
-      </svg>
-    ),
-  },
-  {
-    id: 'git',
-    posX: '90%', posY: '48%', size: 18,
-    duration: 5.5, delay: 1.2, opacity: 0.16,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2L2 7v10l10 5 10-5V7l-10-5z" />
-        <path d="M12 9v6M9 12h6" />
-        <circle cx="8" cy="8" r="1.5" fill="currentColor" stroke="none" />
-        <circle cx="16" cy="16" r="1.5" fill="currentColor" stroke="none" />
-        <circle cx="16" cy="8" r="1.5" fill="currentColor" stroke="none" />
-      </svg>
-    ),
-  },
-  {
-    id: 'tailwind',
-    posX: '4%', posY: '52%', size: 20,
-    duration: 9, delay: 0.6, opacity: 0.15,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M4 16c2-6 6-8 10-6s4 4 6 4" />
-        <path d="M4 10c2-6 6-8 10-6s4 4 6 4" opacity="0.5" />
-      </svg>
-    ),
-  },
-  {
-    id: 'vite',
-    posX: '60%', posY: '10%', size: 18,
-    duration: 6.2, delay: 0.9, opacity: 0.18,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M12 2L4 20h16L12 2z" />
-        <path d="M12 2v18" strokeWidth="0.5" opacity="0.3" />
-      </svg>
-    ),
-  },
-  {
-    id: 'html',
-    posX: '92%', posY: '78%', size: 20,
-    duration: 7.2, delay: 0.4, opacity: 0.12,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M4 2l2 18 6 2 6-2 2-18H4z" />
-        <path d="M8 8h8l-1 6-3 1-3-1" strokeWidth="1" />
-      </svg>
-    ),
-  },
-  {
-    id: 'css',
-    posX: '6%', posY: '82%', size: 20,
-    duration: 6.8, delay: 0.7, opacity: 0.12,
-    render: (s) => (
-      <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <path d="M4 2l2 18 6 2 6-2 2-18H4z" />
-        <path d="M8 12h8l-1 4-3 1-3-1" strokeWidth="1" />
-      </svg>
-    ),
-  },
-]
+function DeveloperTerminal() {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyCode = () => {
+    const code = `const engineer = {
+  name: 'Adarsh Binu M.S',
+  title: 'Full-Stack MERN Developer',
+  location: 'Kozhikode, Kerala',
+  coreStack: ['React', 'Node.js', 'Express', 'MongoDB'],
+  styling: ['Tailwind CSS', 'Framer Motion'],
+  education: 'BCA, Srinivas University',
+  status: 'Available for opportunities'
+};`
+    navigator.clipboard.writeText(code)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2500)
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      className="relative mx-auto w-full max-w-lg lg:max-w-none"
+    >
+      {/* Ambient background glow */}
+      <div
+        className="pointer-events-none absolute -inset-4 rounded-3xl bg-linear-to-tr from-cyan-500/20 via-sky-500/10 to-indigo-500/20 blur-2xl"
+        aria-hidden="true"
+      />
+
+      {/* Terminal Window */}
+      <div className="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/90 shadow-2xl backdrop-blur-xl">
+        {/* Terminal Header Bar */}
+        <div className="flex items-center justify-between border-b border-slate-800/80 bg-slate-900/60 px-4 py-3">
+          <div className="flex items-center gap-2">
+            <span className="h-3 w-3 rounded-full bg-rose-500/80" />
+            <span className="h-3 w-3 rounded-full bg-amber-500/80" />
+            <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
+            <span className="ml-2 font-mono text-xs text-slate-400">developer.config.ts</span>
+          </div>
+          <button
+            type="button"
+            onClick={handleCopyCode}
+            className="flex items-center gap-1.5 rounded-md border border-slate-700/60 bg-slate-800/60 px-2 py-1 font-mono text-[11px] text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
+          >
+            {copied ? (
+              <>
+                <svg className="h-3.5 w-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-emerald-400">Copied</span>
+              </>
+            ) : (
+              <>
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                <span>Copy</span>
+              </>
+            )}
+          </button>
+        </div>
+
+        {/* Code Content */}
+        <div className="p-5 font-mono text-xs sm:text-[13px] leading-relaxed overflow-x-auto text-slate-300">
+          <div className="text-slate-500">// Personal developer configuration</div>
+          <div>
+            <span className="text-indigo-400">const</span>{' '}
+            <span className="text-cyan-300">developer</span>:{' '}
+            <span className="text-amber-300">FullStackEngineer</span> = &#123;
+          </div>
+          <div className="pl-4">
+            <span className="text-slate-400">name</span>:{' '}
+            <span className="text-emerald-300">'Adarsh Binu M.S'</span>,
+          </div>
+          <div className="pl-4">
+            <span className="text-slate-400">role</span>:{' '}
+            <span className="text-emerald-300">'Full-Stack MERN Developer'</span>,
+          </div>
+          <div className="pl-4">
+            <span className="text-slate-400">location</span>:{' '}
+            <span className="text-emerald-300">'Kozhikode, Kerala, India'</span>,
+          </div>
+          <div className="pl-4">
+            <span className="text-slate-400">primaryStack</span>: [
+            <span className="text-amber-200">'React'</span>,{' '}
+            <span className="text-amber-200">'Node.js'</span>,{' '}
+            <span className="text-amber-200">'Express'</span>,{' '}
+            <span className="text-amber-200">'MongoDB'</span>
+            ],
+          </div>
+          <div className="pl-4">
+            <span className="text-slate-400">tools</span>: [
+            <span className="text-teal-300">'Tailwind CSS'</span>,{' '}
+            <span className="text-teal-300">'Git'</span>,{' '}
+            <span className="text-teal-300">'REST APIs'</span>,{' '}
+            <span className="text-teal-300">'Vite'</span>
+            ],
+          </div>
+          <div className="pl-4">
+            <span className="text-slate-400">education</span>:{' '}
+            <span className="text-emerald-300">'BCA, Srinivas University'</span>,
+          </div>
+          <div className="pl-4">
+            <span className="text-slate-400">status</span>:{' '}
+            <span className="text-cyan-300">'Available for Full-time Roles & Internships'</span>
+          </div>
+          <div>&#125;;</div>
+          <div className="mt-2 text-slate-500">
+            <span className="text-indigo-400">export default</span> developer;
+          </div>
+        </div>
+
+        {/* Live Status Footer */}
+        <div className="flex flex-wrap items-center justify-between border-t border-slate-800/80 bg-slate-900/40 px-5 py-3 text-xs">
+          <div className="flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span className="font-mono text-emerald-400">Open to new projects</span>
+          </div>
+          <span className="font-mono text-slate-400">git branch: main</span>
+        </div>
+      </div>
+
+      {/* Floating Highlight Chips */}
+      <div className="mt-4 grid grid-cols-3 gap-3">
+        <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-3 text-center backdrop-blur-sm">
+          <div className="font-display text-lg font-bold text-white">3+</div>
+          <div className="font-mono text-[11px] text-slate-400">Full-Stack Apps</div>
+        </div>
+        <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-3 text-center backdrop-blur-sm">
+          <div className="font-display text-lg font-bold text-cyan-400">MERN</div>
+          <div className="font-mono text-[11px] text-slate-400">Certified Stack</div>
+        </div>
+        <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-3 text-center backdrop-blur-sm">
+          <div className="font-display text-lg font-bold text-emerald-400">BCA</div>
+          <div className="font-mono text-[11px] text-slate-400">Srinivas Univ.</div>
+        </div>
+      </div>
+    </motion.div>
+  )
+}
 
 export default function Hero() {
+  const [emailCopied, setEmailCopied] = useState(false)
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText('adarshbinums@gmail.com')
+    setEmailCopied(true)
+    setTimeout(() => setEmailCopied(false), 2500)
+  }
+
   return (
-    <section className="relative flex min-h-dvh items-center overflow-hidden bg-zinc-950">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-1/2 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-brand opacity-[0.08] blur-[100px] md:h-[800px] md:w-[800px]" />
-      </div>
+    <section className="relative flex min-h-[92svh] items-center overflow-hidden pb-16 pt-28 md:pb-24 md:pt-36">
+      {/* Background Grid & Ambient Glows */}
+      <div className="bg-grid pointer-events-none absolute inset-0 opacity-80" aria-hidden="true" />
+      <div
+        className="pointer-events-none absolute -left-48 top-16 h-128 w-lg rounded-full bg-cyan-500/10 blur-[130px]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute -right-36 top-1/3 h-112 w-md rounded-full bg-indigo-500/10 blur-[140px]"
+        aria-hidden="true"
+      />
 
-      <div className="pointer-events-none absolute inset-0 block">
-        {icons.map((icon) => (
-          <motion.div
-            key={icon.id}
-            className="absolute text-brand"
-            style={{ left: icon.posX, top: icon.posY }}
-            initial={{ opacity: 0, y: 0 }}
-            animate={{
-              opacity: [0, icon.opacity, icon.opacity, 0],
-              y: [0, -20, 0, 20, 0],
-            }}
-            transition={{
-              duration: icon.duration,
-              delay: icon.delay,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            {icon.render(icon.size)}
-          </motion.div>
-        ))}
-      </div>
+      <Container className="relative">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          {/* Left Column: Headline, Bio & CTAs */}
+          <div className="lg:col-span-7">
+            {/* Availability Pill */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 font-mono text-xs font-medium text-cyan-300 shadow-[0_0_15px_rgba(56,189,248,0.15)]"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+              </span>
+              <span>Available for Full-time Roles & Internships</span>
+            </motion.div>
 
-      <Container className="relative flex flex-col items-center text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0, 1] }}
-          className="mb-6 text-sm font-semibold uppercase tracking-[0.2em] text-brand"
-        >
-          Web Developer
-        </motion.p>
+            {/* Main Headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mt-6"
+            >
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
+                Full-Stack Developer crafting{' '}
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 via-sky-300 to-indigo-400">
+                  scalable web apps
+                </span>{' '}
+                & modern interfaces.
+              </h1>
+            </motion.div>
 
-        <AnimatedText
-          text="Adarsh Binu M.S"
-          as="h1"
-          className="max-w-5xl text-5xl font-bold leading-[1.05] tracking-[-0.03em] text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
-        />
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-slate-300"
+            >
+              Hi, I'm <strong className="font-semibold text-white">Adarsh Binu M.S</strong>, a web developer based in Kozhikode, Kerala. I build complete end-to-end full-stack applications with MongoDB, Express, React, and Node.js—combining clean component architecture with reliable REST APIs.
+            </motion.p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0, 1] }}
-          className="mt-8 max-w-2xl text-lg leading-relaxed text-zinc-400 md:text-xl"
-        >
-          A passionate web developer from Kozhikode. I build modern web
-          applications with the MERN stack and a love for clean design.
-        </motion.p>
+            {/* Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-8 flex flex-wrap items-center gap-3.5"
+            >
+              <Button href="#projects" variant="primary">
+                Explore Projects
+                <svg className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </Button>
+              <Button href="#contact" variant="secondary">
+                Get in Touch
+              </Button>
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-800 bg-slate-900/60 px-4 py-3 font-mono text-xs font-medium text-slate-300 hover:border-slate-700 hover:text-white transition-all backdrop-blur-sm"
+              >
+                {emailCopied ? (
+                  <>
+                    <svg className="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-emerald-400">Email Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <svg className="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span>Copy Email</span>
+                  </>
+                )}
+              </button>
+            </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 0.1, 0, 1] }}
-          className="mt-12 flex flex-wrap items-center justify-center gap-4"
-        >
-          <Button href="#projects" variant="primary">View my work</Button>
-          <Button href="#contact" variant="secondary">Get in touch</Button>
-        </motion.div>
+            {/* Quick Links / Badges */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-8 flex flex-wrap items-center gap-4 text-xs font-mono text-slate-400"
+            >
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                <span>React & Node.js Specialist</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <span>REST API Architecture</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
+                <span>Responsive Modern UI</span>
+              </div>
+            </motion.div>
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-            className="flex flex-col items-center gap-2 text-zinc-500"
-          >
-            <span className="text-xs font-semibold uppercase tracking-[0.15em]">
-              Scroll
-            </span>
-            <svg width="16" height="24" viewBox="0 0 16 24" fill="none" className="stroke-zinc-500">
-              <rect x="1" y="1" width="14" height="22" rx="7" strokeWidth="2" />
-              <motion.circle
-                cx="8" cy="8" r="2" fill="currentColor"
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              />
-            </svg>
-          </motion.div>
-        </motion.div>
+          {/* Right Column: Interactive Developer Terminal */}
+          <div className="lg:col-span-5">
+            <DeveloperTerminal />
+          </div>
+        </div>
       </Container>
     </section>
   )

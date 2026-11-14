@@ -1,30 +1,48 @@
-export default function Button({ href, children, variant = 'primary', className = '' }) {
-  const base = 'inline-block rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer'
+export default function Button({
+  href,
+  children,
+  variant = 'primary',
+  className = '',
+  icon: Icon,
+  ...rest
+}) {
+  const base =
+    'inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 font-display text-sm font-semibold tracking-wide transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none'
+
   const variants = {
-    primary: 'bg-brand text-white px-8 py-4 hover:bg-brand-dark',
-    secondary: 'border border-zinc-700 text-zinc-200 px-8 py-4 hover:bg-zinc-800 hover:text-white',
-    ghost: 'text-zinc-400 hover:text-white',
+    primary:
+      'bg-cyan-500 text-slate-950 font-bold hover:bg-cyan-400 active:scale-[0.98] shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 border border-cyan-400/30',
+    secondary:
+      'bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700/60 hover:border-slate-500/80 active:scale-[0.98] backdrop-blur-sm shadow-sm',
+    outline:
+      'bg-transparent hover:bg-slate-800/50 text-slate-300 hover:text-white border border-slate-700 active:scale-[0.98]',
+    ghost:
+      'bg-transparent hover:bg-slate-800/60 text-slate-400 hover:text-cyan-300 active:scale-[0.98]',
   }
 
-  if (href) {
-    const handleClick = (e) => {
-      if (href.startsWith('#')) {
-        e.preventDefault()
-        const el = document.querySelector(href)
-        if (el) el.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
+  const classes = `${base} ${variants[variant] || variants.primary} ${className}`
 
+  if (href) {
+    const isAnchor = href.startsWith('#')
     return (
-      <a href={href} onClick={handleClick} className={`${base} ${variants[variant]} ${className}`}>
+      <a
+        href={href}
+        className={classes}
+        {...(isAnchor
+          ? {}
+          : { target: '_blank', rel: 'noopener noreferrer' })}
+        {...rest}
+      >
         {children}
+        {Icon && <Icon className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />}
       </a>
     )
   }
 
   return (
-    <button className={`${base} ${variants[variant]} ${className}`}>
-      { children }
+    <button type="button" className={classes} {...rest}>
+      {children}
+      {Icon && <Icon className="h-4 w-4 shrink-0" />}
     </button>
   )
 }
