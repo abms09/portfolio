@@ -15,7 +15,7 @@ function App() {
     <MotionConfig reducedMotion="user">
       <a
         href="#main"
-        className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-cyan-500 px-4 py-2 font-display text-xs font-bold text-slate-950 shadow-lg focus:translate-y-0 transition-transform"
+        className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-amber-500 px-4 py-2 font-display text-xs font-bold text-stone-950 shadow-lg focus:translate-y-0 transition-transform"
       >
         Skip to main content
       </a>

@@ -8,10 +8,7 @@ export default function About() {
       <Container>
         {/* Section Header */}
         <div className="max-w-2xl">
-          <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-semibold">
-            // 01
-          </span>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
             About Me
           </h2>
         </div>
@@ -21,7 +18,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="mt-10 max-w-3xl space-y-5 text-base sm:text-lg leading-relaxed text-slate-300"
+          className="mt-10 max-w-3xl space-y-5 text-base sm:text-lg leading-relaxed text-stone-300"
         >
           <p>
             I'm a MERN stack developer with a BCA from{' '}

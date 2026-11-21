@@ -6,7 +6,7 @@ import Container from './Container'
 const featuredProjects = [
   {
     title: 'Clothzy',
-    badge: 'Full-Stack E-Commerce',
+    badge: 'Full-stack e-commerce',
     description:
       'A fashion e-commerce store with the full shopping journey, from browsing to Razorpay checkout, plus an admin panel to run it.',
     features: [
@@ -17,12 +17,10 @@ const featuredProjects = [
     tags: ['React', 'React Router', 'REST APIs', 'Razorpay', 'Google OAuth'],
     demoUrl: 'https://clothzy-alpha.vercel.app/',
     image: '/projects/clothzy.webp',
-    accentColor: '#f472b6',
-    glowClass: 'from-pink-500/15 via-rose-500/5 to-transparent',
   },
   {
     title: 'PetLizo',
-    badge: 'Full-Stack MERN App',
+    badge: 'Full-stack MERN app',
     description:
       'A pet marketplace where buyers and sellers list pets, chat in real time, and pay online, managed from an admin dashboard.',
     features: [
@@ -34,12 +32,10 @@ const featuredProjects = [
     demoUrl: 'https://pet-lizo.vercel.app/',
     githubUrl: 'https://github.com/abms09/petLizo',
     image: '/projects/petlizo.webp',
-    accentColor: '#38bdf8',
-    glowClass: 'from-cyan-500/15 via-sky-500/5 to-transparent',
   },
   {
     title: 'Task Manager',
-    badge: 'Full-Stack MERN App',
+    badge: 'Full-stack MERN app',
     description:
       'A focused task tracker with user accounts and a personal dashboard, backed by a deployed REST API.',
     features: [
@@ -51,8 +47,6 @@ const featuredProjects = [
     demoUrl: 'https://frontend-omega-eosin-80.vercel.app/',
     githubUrl: 'https://github.com/abms09/taskmanager',
     image: '/projects/taskmanager.webp',
-    accentColor: '#a78bfa',
-    glowClass: 'from-violet-500/15 via-purple-500/5 to-transparent',
   },
 ]
 
@@ -96,7 +90,7 @@ function Screenshot({ project, className = '' }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`Open ${project.title} live demo`}
-      className={`group/img block relative aspect-16/10 overflow-hidden bg-slate-950 ${className}`}
+      className={`group/img block relative aspect-16/10 overflow-hidden bg-stone-950 ${className}`}
     >
       {!imageError ? (
         <img
@@ -107,12 +101,12 @@ function Screenshot({ project, className = '' }) {
           className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover/img:scale-[1.03]"
         />
       ) : (
-        <div className="flex h-full w-full items-center justify-center font-display text-3xl font-extrabold text-slate-600">
+        <div className="flex h-full w-full items-center justify-center font-display text-3xl font-extrabold text-stone-600">
           {project.title}
         </div>
       )}
-      <div className="absolute inset-0 flex items-center justify-center bg-slate-950/60 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover/img:opacity-100">
-        <span className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/40 bg-slate-900/90 px-4 py-2 font-display text-xs font-semibold text-cyan-300 shadow-xl">
+      <div className="absolute inset-0 flex items-center justify-center bg-stone-950/60 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover/img:opacity-100">
+        <span className="inline-flex items-center gap-2 rounded-xl border border-amber-500/40 bg-stone-900/90 px-4 py-2 font-display text-xs font-semibold text-amber-300 shadow-xl">
           View Live Demo
           <ExternalIcon />
         </span>
@@ -127,7 +121,7 @@ function Tags({ tags }) {
       {tags.map((tag) => (
         <span
           key={tag}
-          className="rounded-md border border-slate-800 bg-slate-900/80 px-2.5 py-1 font-mono text-[11px] text-slate-300"
+          className="rounded-md border border-stone-800 bg-stone-900/80 px-2.5 py-1 font-mono text-[11px] text-stone-300"
         >
           {tag}
         </span>
@@ -143,58 +137,32 @@ function FeaturedCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative rounded-3xl border border-slate-800 bg-slate-950/80 p-6 sm:p-8 backdrop-blur-sm transition-all duration-300 hover:border-slate-700 hover:shadow-2xl hover:shadow-black/60"
+      className="relative"
     >
-      <div
-        className={`pointer-events-none absolute -inset-1 rounded-3xl bg-linear-to-r ${project.glowClass} blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-        aria-hidden="true"
-      />
-
-      <div className="relative grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
+      <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-14">
         {/* Screenshot in browser frame */}
         <div className={`lg:col-span-7 ${index % 2 === 1 ? 'lg:order-last' : ''}`}>
-          <div className="overflow-hidden rounded-2xl border border-slate-800/90 bg-slate-900/90 shadow-2xl">
-            <div className="flex items-center gap-3 border-b border-slate-800 bg-slate-950/90 px-4 py-3">
-              <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-rose-500/80" />
-                <span className="h-3 w-3 rounded-full bg-amber-500/80" />
-                <span className="h-3 w-3 rounded-full bg-emerald-500/80" />
-              </div>
-              <div className="min-w-0 truncate rounded-md border border-slate-800 bg-slate-900/90 px-3 py-1 font-mono text-[11px] text-slate-400">
-                {project.demoUrl.replace('https://', '').replace(/\/$/, '')}
-              </div>
-            </div>
+          <div className="overflow-hidden rounded-2xl border border-stone-800 bg-stone-900 shadow-2xl shadow-black/40">
             <Screenshot project={project} />
           </div>
         </div>
 
         {/* Info */}
         <div className="lg:col-span-5">
-          <span
-            className="inline-block rounded-md border px-2.5 py-1 font-mono text-[11px] font-semibold uppercase tracking-wider"
-            style={{
-              borderColor: `${project.accentColor}40`,
-              backgroundColor: `${project.accentColor}15`,
-              color: project.accentColor,
-            }}
-          >
-            {project.badge}
-          </span>
+          <p className="text-sm text-stone-500">{project.badge}</p>
 
-          <h3 className="mt-3 font-display text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+          <h3 className="mt-1 font-heading text-4xl sm:text-5xl text-white">
             {project.title}
           </h3>
 
-          <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-300">
+          <p className="mt-3 text-sm sm:text-base leading-relaxed text-stone-300">
             {project.description}
           </p>
 
-          <ul className="mt-5 space-y-2 text-sm text-slate-400">
+          <ul className="mt-5 space-y-2 text-sm text-stone-400">
             {project.features.map((feature) => (
-              <li key={feature} className="flex items-start gap-2">
-                <svg className="h-4 w-4 shrink-0 text-cyan-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                </svg>
+              <li key={feature} className="flex items-start gap-3">
+                <span className="mt-2.5 h-px w-3 shrink-0 bg-stone-600" aria-hidden="true" />
                 <span>{feature}</span>
               </li>
             ))}
@@ -209,7 +177,7 @@ function FeaturedCard({ project, index }) {
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-4 py-2.5 font-display text-xs font-bold text-slate-950 transition-all hover:bg-cyan-400 shadow-lg shadow-cyan-500/20 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl bg-amber-500 px-4 py-2.5 font-display text-xs font-bold text-stone-950 transition-colors hover:bg-amber-400 active:scale-[0.98]"
             >
               Live Demo
               <ExternalIcon />
@@ -219,7 +187,7 @@ function FeaturedCard({ project, index }) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-2.5 font-display text-xs font-semibold text-slate-200 transition-all hover:border-slate-500 hover:text-white active:scale-[0.98]"
+                className="inline-flex items-center gap-2 rounded-xl border border-stone-700 bg-stone-900/80 px-4 py-2.5 font-display text-xs font-semibold text-stone-200 transition-all hover:border-stone-500 hover:text-white active:scale-[0.98]"
               >
                 <GitHubIcon />
                 View Source
@@ -239,13 +207,13 @@ function OtherCard({ project, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="flex flex-col overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 transition-colors hover:border-slate-700"
+      className="flex flex-col overflow-hidden rounded-2xl border border-stone-800 bg-stone-950/80 transition-colors hover:border-stone-700"
     >
-      <Screenshot project={project} className="border-b border-slate-800" />
+      <Screenshot project={project} className="border-b border-stone-800" />
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="flex items-start justify-between gap-4">
-          <h4 className="font-display text-lg font-bold text-white">{project.title}</h4>
-          <div className="flex items-center gap-3 text-slate-400">
+          <h4 className="font-heading text-2xl text-white">{project.title}</h4>
+          <div className="flex items-center gap-3 text-stone-400">
             <a
               href={project.githubUrl}
               target="_blank"
@@ -260,13 +228,13 @@ function OtherCard({ project, index }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} live demo`}
-              className="hover:text-cyan-300 transition-colors"
+              className="hover:text-amber-300 transition-colors"
             >
               <ExternalIcon className="h-4 w-4" />
             </a>
           </div>
         </div>
-        <p className="mt-2 text-sm text-slate-400">{project.description}</p>
+        <p className="mt-2 text-sm text-stone-400">{project.description}</p>
         <div className="mt-auto pt-5">
           <Tags tags={project.tags} />
         </div>
@@ -282,10 +250,7 @@ export default function Projects() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div className="max-w-2xl">
-            <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-semibold">
-              // 03
-            </span>
-            <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
               Featured Projects
             </h2>
           </div>
@@ -294,7 +259,7 @@ export default function Projects() {
             href="https://github.com/abms09"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-xs font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
+            className="inline-flex items-center gap-2 font-mono text-xs font-medium text-amber-400 hover:text-amber-300 transition-colors"
           >
             <span>See more on GitHub</span>
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -304,14 +269,14 @@ export default function Projects() {
         </div>
 
         {/* Featured full-stack projects */}
-        <div className="mt-14 space-y-10 sm:space-y-12">
+        <div className="mt-16 space-y-20 sm:space-y-28">
           {featuredProjects.map((project, index) => (
             <FeaturedCard key={project.title} project={project} index={index} />
           ))}
         </div>
 
         {/* Other projects */}
-        <h3 className="mt-20 font-display text-xl sm:text-2xl font-bold text-white">Other Projects</h3>
+        <h3 className="mt-24 font-heading text-3xl text-white">Other projects</h3>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {otherProjects.map((project, index) => (
             <OtherCard key={project.title} project={project} index={index} />

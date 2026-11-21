@@ -6,7 +6,7 @@ const skillCategories = [
   {
     title: 'Frontend',
     icon: (
-      <svg className="h-5 w-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg className="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
@@ -15,7 +15,7 @@ const skillCategories = [
   {
     title: 'Backend & Database',
     icon: (
-      <svg className="h-5 w-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg className="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
       </svg>
     ),
@@ -24,7 +24,7 @@ const skillCategories = [
   {
     title: 'Tools & Workflow',
     icon: (
-      <svg className="h-5 w-5 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <svg className="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
@@ -39,10 +39,7 @@ export default function Skills() {
       <Container>
         {/* Section Header */}
         <div className="max-w-2xl">
-          <span className="font-mono text-xs uppercase tracking-wider text-cyan-400 font-semibold">
-            // 02
-          </span>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
             Skills &amp; Tools
           </h2>
         </div>
@@ -56,10 +53,10 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: index * 0.12 }}
-              className="rounded-2xl border border-slate-800 bg-slate-950/70 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-slate-700"
+              className="rounded-2xl border border-stone-800 bg-stone-950/70 p-6 backdrop-blur-sm transition-colors duration-300 hover:border-stone-700"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-800 bg-slate-900">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-stone-800 bg-stone-900">
                   {category.icon}
                 </div>
                 <h3 className="font-display text-lg font-bold text-white">{category.title}</h3>
@@ -69,7 +66,7 @@ export default function Skills() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-lg border border-slate-800/90 bg-slate-900/80 px-3 py-1.5 font-mono text-xs font-medium text-slate-200 transition-colors hover:border-cyan-500/40 hover:text-white"
+                    className="rounded-lg border border-stone-800/90 bg-stone-900/80 px-3 py-1.5 font-mono text-xs font-medium text-stone-200 transition-colors hover:border-amber-500/40 hover:text-white"
                   >
                     {skill}
                   </span>

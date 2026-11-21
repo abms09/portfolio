@@ -1,34 +1,15 @@
 @import "tailwindcss";
 
+/*
+ * Palette: Charcoal & Amber
+ * Neutrals use Tailwind's warm `stone` scale, the single accent is `amber`.
+ * `canvas` is the page background.
+ */
 @theme {
-  --color-dark-950: #060911;
-  --color-dark-900: #090d16;
-  --color-dark-850: #0c121e;
-  --color-dark-800: #111a2c;
-  --color-dark-700: #17233b;
-  --color-dark-600: #1f3052;
-
-  --color-leaf: #090d16;
-  --color-leaf-2: #0f172a;
-  --color-ink: #f8fafc;
-  --color-mute: #94a3b8;
-  --color-line: rgba(255, 255, 255, 0.08);
-  --color-turmeric: #38bdf8;
-
-  --color-cyan-glow: #38bdf8;
-  --color-emerald-glow: #10b981;
-  --color-indigo-glow: #6366f1;
-
-  --text-display: clamp(2.75rem, 1.8rem + 4.5vw, 6rem);
-  --text-h2: clamp(2rem, 1.4rem + 2.2vw, 3.25rem);
-  --text-h3: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem);
-  --text-lead: clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
-  --text-prose: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
-  --text-skill: clamp(1.1rem, 0.95rem + 0.8vw, 1.5rem);
-  --text-marquee: clamp(1.25rem, 1rem + 1.2vw, 2rem);
-  --text-email: clamp(1.25rem, 0.75rem + 2.5vw, 2.75rem);
+  --color-canvas: #0f0e0c;
 
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Instrument Serif", ui-serif, Georgia, serif;
   --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
@@ -46,8 +27,8 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--color-dark-900);
-  color: var(--color-ink);
+  background-color: var(--color-canvas);
+  color: var(--color-stone-100);
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.0625rem);
   line-height: 1.65;
@@ -63,69 +44,31 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid #38bdf8;
+  outline: 2px solid var(--color-amber-400);
   outline-offset: 3px;
 }
 
 ::selection {
-  background: rgba(56, 189, 248, 0.25);
-  color: #f8fafc;
+  background: color-mix(in oklab, var(--color-amber-400) 30%, transparent);
+  color: var(--color-stone-50);
 }
 
-/* Custom scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: var(--color-canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: var(--color-stone-800);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: var(--color-stone-700);
 }
 
-/* Developer Grid Pattern */
-.bg-grid {
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 25%, transparent 75%);
-}
-
-.bg-radial-gradient {
-  background: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 60%);
-}
-
-/* Glassmorphism */
-.glass-card {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.14);
-}
-
-/* Text Gradients */
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #ffffff 20%, #38bdf8 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Marquee Animation */
+/* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -133,11 +76,6 @@ body {
 
 .marquee-track {
   animation: marquee 32s linear infinite;
-}
-
-.marquee-reverse {
-  animation-direction: reverse;
-  animation-duration: 38s;
 }
 
 .marquee:hover .marquee-track {
