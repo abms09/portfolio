@@ -138,6 +138,16 @@ export default function Navbar() {
             </svg>
           </a>
           <a
+            href="/Adarsh_Binu_MS_Resume.pdf"
+            download="Adarsh_Binu_MS_Resume.pdf"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-900/80 px-3.5 py-1.5 font-display text-xs font-semibold text-slate-200 hover:border-slate-500 hover:text-white transition-all"
+          >
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Resume
+          </a>
+          <a
             href="#contact"
             className="rounded-lg bg-cyan-500/10 border border-cyan-500/30 px-3.5 py-1.5 font-display text-xs font-semibold text-cyan-400 hover:bg-cyan-500 hover:text-slate-950 transition-all shadow-sm"
           >
@@ -204,6 +214,18 @@ export default function Navbar() {
                   </li>
                 ))}
               </ul>
+
+              <a
+                href="/Adarsh_Binu_MS_Resume.pdf"
+                download="Adarsh_Binu_MS_Resume.pdf"
+                onClick={() => setMobileOpen(false)}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 px-4 py-3 font-display text-sm font-bold text-slate-950 hover:bg-cyan-400 transition-colors"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                Download Resume
+              </a>
 
               <div className="pt-4 border-t border-slate-800/80 flex items-center gap-4">
                 <a
